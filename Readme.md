@@ -15,9 +15,13 @@ This project demonstrates how to deploy **MongoDB** and **Mongo Express** using 
 ## 📁 Folder Structure
 
 ├── mongo-deployment.yaml
+
 ├── mongo-express-deployment.yaml
+
 ├── mongo-secret.yaml
+
 ├── mongo-configmap.yaml
+
 └── README.md
 
 ---
@@ -58,21 +62,29 @@ kubectl apply -f mongo-secret.yaml
 
 ### 2️⃣ Apply ConfigMap
 
+```bash
 kubectl apply -f mongo-configmap.yaml
+```
 
 ### 3️⃣ Deploy MongoDB
 
+```bash
 kubectl apply -f mongo-deployment.yaml
+```
 
 ### 4️⃣ Deploy Mongo Express
 
+```bash
 kubectl apply -f mongo-express-deployment.yaml
+```
 
 ### 📋 Verify Deployments
 
+```bash
 kubectl get deployments
 kubectl get pods
 kubectl get services
+```
 
 ### 🌐 Accessing Mongo Express
 
@@ -82,19 +94,24 @@ minikube service mongo-express-service
 
 ## Alternatively, you can access Mongo Express manually via:
 
+```bash
 http://<NodeIP>:30001
+```
+
 Replace <NodeIP> with your node’s IP address if you're not using Minikube.
 
 ### 🧼 Clean Up Resources
 
 To remove the resources you've created:
+
+```bash
 kubectl delete -f mongo-secret.yaml
 kubectl delete -f mongo-configmap.yaml
 kubectl delete -f mongo-deployment.yaml
 kubectl delete -f mongo-express-deployment.yaml
+```
 
 ### 📦 Docker Images Used
 
-MongoDB: mongo
-
-Mongo Express: mongo-express
+-MongoDB: mongo
+-Mongo Express: mongo-express
